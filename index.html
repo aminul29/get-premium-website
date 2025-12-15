@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebWizBD - Premium Human-Crafted Web Design & Development</title>
+    <meta name="description"
+        content="We build high-performance WordPress & Shopify websites for brands that refuse to settle for AI templates. Secure. Bespoke. Expensive.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#7C3AED',
+                        secondary: '#3B82F6',
+                        accent: '#06B6D4',
+                        dark: '#0F172A',
+                        darker: '#020617',
+                        surface: '#1E293B',
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)',
+                        'accent-gradient': 'linear-gradient(to right, #7C3AED, #3B82F6)',
+                        'glass-gradient': 'linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-darker text-white overflow-x-hidden antialiased selection:bg-accent selection:text-white">
+
+    <!-- Canvas for Three.js Background -->
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+
+    <!-- Sticky Header -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 border-b border-white/5 glass">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold flex items-center gap-2">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-secondary">WebWizBD</span>
+            </a>
+            <div id="mobile-menu" class="hidden md:flex items-center gap-8">
+                <a href="#philosophy"
+                    class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Philosophy</a>
+                <a href="#process"
+                    class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Process</a>
+                <a href="#work" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Work</a>
+                <a href="#faq" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">FAQ</a>
+                <a href="#contact"
+                    class="btn-glow px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold text-sm transition-all transform hover:scale-105">Start
+                    Project</a>
+            </div>
+            <button class="md:hidden text-white text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Animated Gradient Background -->
+        <div class="absolute inset-0 hero-gradient-bg -z-20"></div>
+
+        <!-- Decor elements -->
+        <div
+            class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+        </div>
+        <div
+            class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[100px] -z-10 animate-pulse-slow delay-1000">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div
+                class="inline-block mb-6 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/10 backdrop-blur-md">
+                <span class="text-accent text-xs font-semibold uppercase tracking-wider">💎 Premium Digital
+                    Agency</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tight hero-title">
+                Stop Burning Cash on <br>
+                <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-accent via-secondary to-primary animate-gradient-x">Amateur
+                    Websites.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 mt-5 max-w-3xl mx-auto leading-relaxed">
+                Generic AI templates kill conversions. We engineer custom, high-performance <span
+                    class="text-white font-semibold">WordPress & Shopify</span> assets for brands ready to scale.
+            </p>
+            <div class="hero-buttons flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 relative z-20">
+                <a href="#contact"
+                    class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-darker font-bold text-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1 hover:shadow-lg hover:shadow-white/20">
+                    Apply for Access
+                </a>
+                <a href="#work"
+                    class="w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 glass hover:bg-white/10 transition-all font-medium">
+                    View Portfolio
+                </a>
+            </div>
+
+            <!-- Trusted By / Social Proof -->
+            <div class="mb-12 pt-8 border-t border-white/5">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-6 font-semibold">Trusted by High-Growth
+                    Brands
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale">
+                    <!-- Simple Text Logos for speed/cleanliness -->
+                    <span class="text-xl font-bold font-serif">VOGUE</span>
+                    <span class="text-xl font-bold font-sans tracking-tighter">techcrunch</span>
+                    <span class="text-xl font-bold font-mono">Forbes</span>
+                    <span class="text-xl font-bold font-serif italic">Entrepreneur</span>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-4 md:gap-8 text-xs md:text-sm font-medium text-gray-400">
+                <span class="flex items-center gap-2"><i class="fas fa-lock text-green-400"></i> Enterprise
+                    Security</span>
+                <span class="flex items-center gap-2"><i class="fas fa-code text-green-400"></i> Custom Code</span>
+                <span class="flex items-center gap-2"><i class="fas fa-ban text-red-400"></i> No Templates</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">The WebWizBD Standard</h2>
+                <p class="text-gray-400 text-lg">We don't just "design" — we engineer revenue engines.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 relative z-10">
+                <!-- Step 1 -->
+                <div
+                    class="glass p-8 rounded-2xl relative group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+                        1</div>
+                    <h3 class="text-xl font-bold mb-4">Strategic Discovery</h3>
+                    <p class="text-gray-400 leading-relaxed">We dig deep into your brand DNA. No templates. We define
+                        the user journey that converts high-value traffic.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div
+                    class="glass p-8 rounded-2xl relative group hover:-translate-y-2 transition-transform duration-300 delay-100">
+                    <div
+                        class="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-secondary/30 group-hover:scale-110 transition-transform">
+                        2</div>
+                    <h3 class="text-xl font-bold mb-4">Bespoke Development</h3>
+                    <p class="text-gray-400 leading-relaxed">Hand-coded WordPress & Shopify themes. Clean, secure,
+                        lightweight code that Google loves and hackers hate.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div
+                    class="glass p-8 rounded-2xl relative group hover:-translate-y-2 transition-transform duration-300 delay-200">
+                    <div
+                        class="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-accent/30 group-hover:scale-110 transition-transform">
+                        3</div>
+                    <h3 class="text-xl font-bold mb-4">Optimization & Scale</h3>
+                    <p class="text-gray-400 leading-relaxed">Launch is just day one. We ensure your asset performs at
+                        warp speed, scaling as your revenue grows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Client Websites (Carousel) -->
+    <section id="work" class="py-24 bg-surface/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Bespoke Creations</h2>
+                <p class="text-gray-400 text-lg">No two businesses are alike. Neither are our websites.</p>
+            </div>
+
+            <div class="owl-carousel owl-theme relative z-10">
+                <!-- Item 1 -->
+                <div class="item glass rounded-xl overflow-hidden group">
+                    <div class="h-64 bg-gray-700/50 flex items-center justify-center relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-900/40 to-blue-900/40 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                            <span
+                                class="px-6 py-2 bg-white text-darker rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform">View
+                                Case Study</span>
+                        </div>
+                        <!-- Placeholder for screenshot -->
+                        <div class="text-gray-500 font-mono text-sm">DAO for Design</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg mb-1">DAO for Design</h4>
+                        <p class="text-sm text-gray-400">Design Agency</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="item glass rounded-xl overflow-hidden group">
+                    <div class="h-64 bg-gray-700/50 flex items-center justify-center relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-900/40 to-blue-900/40 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                            <span
+                                class="px-6 py-2 bg-white text-darker rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform">View
+                                Case Study</span>
+                        </div>
+                        <div class="text-gray-500 font-mono text-sm">Parabol</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg mb-1">Parabol</h4>
+                        <p class="text-sm text-gray-400">Tech Startup</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="item glass rounded-xl overflow-hidden group">
+                    <div class="h-64 bg-gray-700/50 flex items-center justify-center relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-900/40 to-blue-900/40 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                            <span
+                                class="px-6 py-2 bg-white text-darker rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform">View
+                                Case Study</span>
+                        </div>
+                        <div class="text-gray-500 font-mono text-sm">Richard Payne</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg mb-1">Richard Payne</h4>
+                        <p class="text-sm text-gray-400">Real Estate</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="item glass rounded-xl overflow-hidden group">
+                    <div class="h-64 bg-gray-700/50 flex items-center justify-center relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-900/40 to-blue-900/40 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                            <span
+                                class="px-6 py-2 bg-white text-darker rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform">View
+                                Case Study</span>
+                        </div>
+                        <div class="text-gray-500 font-mono text-sm">Nexus Core</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg mb-1">Nexus Core</h4>
+                        <p class="text-sm text-gray-400">SaaS Platform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proven Results (Testimonials/Stats) -->
+    <section id="reviews" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-darker to-surface/20 -z-10"></div>
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-8">Proven Results</h2>
+                    <p class="text-gray-400 text-lg mb-12">We don't just build websites; we build business assets that
+                        drive growth.</p>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass p-6 rounded-2xl text-center">
+                            <div class="text-4xl font-bold text-accent mb-2 count-up" data-target="150">0</div>
+                            <div class="text-sm text-gray-400 uppercase tracking-widest">Enterprise Clients</div>
+                        </div>
+                        <div class="glass p-6 rounded-2xl text-center">
+                            <div class="text-4xl font-bold text-primary mb-2 count-up" data-target="500">0</div>
+                            <div class="text-sm text-gray-400 uppercase tracking-widest">% ROI Avg</div>
+                        </div>
+                        <div class="glass p-6 rounded-2xl text-center">
+                            <div class="text-4xl font-bold text-secondary mb-2 count-up" data-target="10000">0</div>
+                            <div class="text-sm text-gray-400 uppercase tracking-widest">Hours of Code</div>
+                        </div>
+                        <div class="glass p-6 rounded-2xl text-center">
+                            <div class="text-4xl font-bold text-purple-400 mb-2 count-up" data-target="100">0</div>
+                            <div class="text-sm text-gray-400 uppercase tracking-widest">% Uptime & Security</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Review 1 -->
+                    <div
+                        class="glass p-8 rounded-2xl border-l-4 border-accent relative transform hover:translate-x-2 transition-transform">
+                        <i class="fas fa-quote-left text-3xl text-accent/30 absolute top-6 right-6"></i>
+                        <div class="mb-4">
+                            <span class="bg-accent/20 text-accent text-xs font-bold px-2 py-1 rounded">+$150k
+                                Revenue/Mo</span>
+                        </div>
+                        <p class="text-lg italic text-gray-300 mb-6">“I was hesitant about the investment. But the site
+                            paid for itself in month two. The AI junk I tried before was costing me leads. This is a
+                            machine.”</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-xl font-bold text-white">
+                                SJ</div>
+                            <div>
+                                <h5 class="font-bold flex items-center gap-2">Sarah Jenkins <i
+                                        class="fas fa-check-circle text-blue-400 text-xs" title="Verified Client"></i>
+                                </h5>
+                                <p class="text-sm text-gray-500">CEO, Jenkins Luxury</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div
+                        class="glass p-8 rounded-2xl border-l-4 border-primary relative transform hover:translate-x-2 transition-transform">
+                        <i class="fas fa-quote-left text-3xl text-primary/30 absolute top-6 right-6"></i>
+                        <div class="mb-4">
+                            <span class="bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded">300%
+                                Converions</span>
+                        </div>
+                        <p class="text-lg italic text-gray-300 mb-6">“WebWizBD didn't just build a Shopify store; they
+                            built a brand ecosystem. Custom features, zero bloat. My conversion rate doubled.”</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-xl font-bold text-white">
+                                MR</div>
+                            <div>
+                                <h5 class="font-bold flex items-center gap-2">Mike Ross <i
+                                        class="fas fa-check-circle text-blue-400 text-xs" title="Verified Client"></i>
+                                </h5>
+                                <p class="text-sm text-gray-500">Founder, E-com Giant</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div
+                        class="glass p-8 rounded-2xl border-l-4 border-secondary relative transform hover:translate-x-2 transition-transform">
+                        <i class="fas fa-quote-left text-3xl text-secondary/30 absolute top-6 right-6"></i>
+                        <div class="mb-4">
+                            <span class="bg-secondary/20 text-secondary text-xs font-bold px-2 py-1 rounded">Flash Load
+                                Speeds</span>
+                        </div>
+                        <p class="text-lg italic text-gray-300 mb-6">“No templates. Seriously. I checked the code. It is
+                            a masterpiece of optimization. Expensive? Yes. Worth it? Absolutely.”</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-xl font-bold text-white">
+                                DC</div>
+                            <div>
+                                <h5 class="font-bold flex items-center gap-2">David Chen <i
+                                        class="fas fa-check-circle text-blue-400 text-xs" title="Verified Client"></i>
+                                </h5>
+                                <p class="text-sm text-gray-500">CTO, TechFlow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Philosophy -->
+    <section id="philosophy" class="py-24 relative">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8">The AI Trap</h2>
+            <p class="text-xl text-gray-300 mb-12">Why "Cheap & Fast" is the most expensive mistake you'll make.</p>
+            <div class="glass p-10 rounded-3xl border border-white/10 shadow-2xl shadow-primary/10">
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <div class="space-y-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent text-xl">
+                            <i class="fas fa-biohazard"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Data Leaks & Hacks</h3>
+                        <p class="text-gray-400 text-sm">Cheap AI code is a sieve for data thieves. One breach can
+                            destroy your brand's reputation forever. We fortify every line.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl">
+                            <i class="fas fa-copy"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">The "Clone" Effect</h3>
+                        <p class="text-gray-400 text-sm">Your competitors are using the same $49 template. We build
+                            bespoke digital identities that make you the only option.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary text-xl">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Psychological Miss</h3>
+                        <p class="text-gray-400 text-sm">AI doesn't understand human desire. We architect user journeys
+                            rooted in behavioral psychology to trigger high-ticket sales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Comparison -->
+    <section class="py-24 bg-surface/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">The Price of Excellence</h2>
+                <p class="text-gray-400 text-lg">Why WebWizBD is an Investment, not an Expense.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto overflow-hidden rounded-3xl border border-white/10 glass">
+                <div class="grid grid-cols-3 divide-x divide-white/10">
+                    <div class="p-8 text-center bg-darker/50">
+                        <h4 class="font-bold text-gray-400 mb-2">Feature</h4>
+                    </div>
+                    <div class="p-8 text-center bg-darker/50">
+                        <h4 class="font-bold text-gray-400 mb-2">Cheap Agencies / AI</h4>
+                    </div>
+                    <div class="p-8 text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20 -z-10"></div>
+                        <h4 class="font-bold text-white text-xl mb-2">WebWizBD</h4>
+                    </div>
+                </div>
+
+                <!-- Row 1 -->
+                <div class="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10">
+                    <div class="p-6 md:px-8 flex items-center text-gray-300 font-medium">Investment</div>
+                    <div class="p-6 md:px-8 flex items-center justify-center text-red-400 font-bold">$0 - $500</div>
+                    <div
+                        class="p-6 md:px-8 flex items-center justify-center text-green-400 font-bold bg-primary/5 text-xl">
+                        $5,000+</div>
+                </div>
+                <!-- Row 2 -->
+                <div class="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10">
+                    <div class="p-6 md:px-8 flex items-center text-gray-300 font-medium">Code Quality</div>
+                    <div class="p-6 md:px-8 flex items-center justify-center text-gray-400">Bloated / AI-Generated</div>
+                    <div class="p-6 md:px-8 flex items-center justify-center text-white font-bold bg-primary/5">
+                        Hand-Crafted & Optimized</div>
+                </div>
+                <!-- Row 3 -->
+                <div class="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10">
+                    <div class="p-6 md:px-8 flex items-center text-gray-300 font-medium">Security</div>
+                    <div class="p-6 md:px-8 flex items-center justify-center text-red-400"><i
+                            class="fas fa-exclamation-triangle lg:mr-2"></i> <span
+                            class="hidden lg:inline">Vulnerable</span></div>
+                    <div class="p-6 md:px-8 flex items-center justify-center text-green-400 bg-primary/5"><i
+                            class="fas fa-lock lg:mr-2"></i> <span class="hidden lg:inline">Fortified</span>
+                    </div>
+                </div>
+                <!-- Row 4 -->
+                <div class="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10">
+                    <div class="p-6 md:px-8 flex items-center text-gray-300 font-medium">ROI Potential</div>
+                    <div class="p-6 md:px-8 flex items-center justify-center text-red-400">Low / Negative</div>
+                    <div class="p-6 md:px-8 flex items-center justify-center text-green-400 bg-primary/5"><i
+                            class="fas fa-chart-line lg:mr-2"></i> <span class="hidden lg:inline">Exceptional</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Everything Included -->
+    <section id="features" class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">The WebWizBD Advantage</h2>
+                <p class="text-gray-400 text-lg">Every premium website includes these core pillars of success.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Bespoke Design</h3>
+                    <p class="text-sm text-gray-400">Unique, conversion-focused design reflecting your brand's elite
+                        status.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Adaptive Responsiveness</h3>
+                    <p class="text-sm text-gray-400">Flawless experience across all devices, from mobile to desktop.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Elite SEO Foundation</h3>
+                    <p class="text-sm text-gray-400">Engineered for top search engine rankings and organic growth.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Blazing Fast Performance</h3>
+                    <p class="text-sm text-gray-400">Optimized for speed, ensuring superior user experience and SEO.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Advanced Lead Generation</h3>
+                    <p class="text-sm text-gray-400">Integrated systems to capture and nurture high-value leads.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Ironclad Security</h3>
+                    <p class="text-sm text-gray-400">Robust protection against threats, ensuring data integrity and
+                        trust.</p>
+                </div>
+                <!-- Feature 7 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Scalable Architecture</h3>
+                    <p class="text-sm text-gray-400">Built to grow with your business, handling increasing traffic and
+                        features.</p>
+                </div>
+                <!-- Feature 8 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-gradient-to-br from-lime-500 to-green-500 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Concierge Support</h3>
+                    <p class="text-sm text-gray-400">Direct access to your developers. No tickets. No bots.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-surface/30">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-400 text-lg">Answers to common questions about our program</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="glass rounded-xl overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 flex justify-between items-center text-left font-bold text-lg hover:bg-white/5 transition-colors">
+                        <span>Why are your websites so expensive?</span>
+                        <i class="fas fa-plus transform transition-transform duration-300 text-accent"></i>
+                    </button>
+                    <div class="faq-content h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-400">
+                            Because you're not paying for a website. You're paying for a business asset that generates
+                            revenue. We spend hundreds of hours on strategy, design, and code custom-tailored to your
+                            market. Cheap websites cost you sales; ours make you money.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="glass rounded-xl overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 flex justify-between items-center text-left font-bold text-lg hover:bg-white/5 transition-colors">
+                        <span>Do you use AI?</span>
+                        <i class="fas fa-plus transform transition-transform duration-300 text-accent"></i>
+                    </button>
+                    <div class="faq-content h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-400">
+                            We use AI to handle mundane tasks, allowing our human experts to focus 100% on high-level
+                            strategy, creative design, and complex problem-solving. We never use AI to write your final
+                            code or design your unique brand identity.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="glass rounded-xl overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 flex justify-between items-center text-left font-bold text-lg hover:bg-white/5 transition-colors">
+                        <span>Which platforms do you use?</span>
+                        <i class="fas fa-plus transform transition-transform duration-300 text-accent"></i>
+                    </button>
+                    <div class="faq-content h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-400">
+                            We specialize in advanced **WordPress** for robust content management and scalable
+                            **Shopify** custom builds for e-commerce. We choose the best tool for your specific business
+                            goals, not what's easiest for us.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="glass rounded-xl overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 flex justify-between items-center text-left font-bold text-lg hover:bg-white/5 transition-colors">
+                        <span>Who is this NOT for?</span>
+                        <i class="fas fa-plus transform transition-transform duration-300 text-accent"></i>
+                    </button>
+                    <div class="faq-content h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-400">
+                            This is not for hobbyists, drop-shippers testing a product, or anyone looking for a "quick
+                            fix." If you view your website as an expense rather than an investment, we are not the right
+                            agency for you.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <footer id="contact" class="py-24 relative overflow-hidden text-center">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/20 via-darker to-darker -z-10"></div>
+        <div class="container mx-auto px-6">
+            <div
+                class="inline-block mb-6 px-4 py-1.5 rounded-full border border-red-500/30 bg-red-500/10 backdrop-blur-md animate-pulse-slow">
+                <span class="text-red-400 text-xs font-semibold uppercase tracking-wider">⚠️ <span
+                        id="current-month"></span> Availability: 2 Spots Left</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-8">
+                Ready to <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Dominate</span> Your
+                Niche?
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                We accept only 4 new clients per month to ensure absolute focus. Secure your spot before the waitlist
+                grows.
+            </p>
+            <a href="#contact"
+                class="inline-block px-10 py-5 rounded-full bg-white text-darker font-bold text-xl hover:scale-105 transition-transform shadow-2xl shadow-white/20">
+                Apply for Access
+            </a>
+
+            <div
+                class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <div>&copy; 2024 WebWizBD. All rights reserved.</div>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
