@@ -43,6 +43,25 @@ html {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Glass Morphic Form Fields */
+.glass-field {
+    background: #1b2335;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.glass-field:hover {
+    background: #1f2942;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.glass-field:focus {
+    background: #1f2942;
+    border-color: rgba(6, 182, 212, 0.5);
+}
+
 /* Gradient Text Animation */
 .animate-gradient-x {
     background-size: 200% auto;
@@ -167,4 +186,22 @@ html {
     .glass {
         backdrop-filter: blur(5px);
     }
+}
+
+/* Modal Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
 }

@@ -405,4 +405,69 @@ $(document).ready(function () {
         });
     });
 
+
+
+// ---------------------------------------------
+// MODAL LOGIC
+// ---------------------------------------------
+const modal = $('#application-modal');
+
+const openModal = () => {
+    modal.removeClass('hidden').addClass('flex');
+    // Animate In
+    gsap.fromTo("#modal-backdrop",
+        { opacity: 0 },
+        { opacity: 1, duration: 0.3 }
+    );
+    gsap.fromTo("#modal-content",
+        { opacity: 0, scale: 0.95 },
+        { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }
+    );
+    $('body').addClass('overflow-hidden');
+};
+
+const closeModal = () => {
+    // Animate Out
+    gsap.to("#modal-backdrop", { opacity: 0, duration: 0.2 });
+    gsap.to("#modal-content", {
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.2,
+        ease: "power2.in",
+        onComplete: () => {
+            modal.removeClass('flex').addClass('hidden');
+            $('body').removeClass('overflow-hidden');
+        }
+    });
+};
+
+// Open Modal Triggers (Any link to #contact or explicit buttons)
+$('a[href="#contact"]').on('click', function (e) {
+    e.preventDefault();
+    openModal();
+});
+
+// Close Modal Triggers
+$('#close-modal, #modal-backdrop').on('click', closeModal);
+
+// Form Submission
+$('#application-form').on('submit', function (e) {
+    e.preventDefault();
+
+    // Simulate sending
+    const btn = $(this).find('button[type="submit"]');
+    const originalText = btn.text();
+
+    btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin mr-2"></i> Sending...');
+
+    setTimeout(() => {
+        btn.text('Application Sent!').addClass('bg-green-500');
+        setTimeout(() => {
+            closeModal();
+            btn.prop('disabled', false).text(originalText).removeClass('bg-green-500');
+            $('#application-form')[0].reset();
+        }, 1000);
+    }, 1500);
+});
+
 });

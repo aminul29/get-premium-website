@@ -663,6 +663,101 @@
         </div>
     </footer>
 
+    <!-- Application Modal -->
+    <div id="application-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modal-backdrop"></div>
+
+        <!-- Modal Content -->
+        <div class="relative w-full max-w-2xl bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl transform scale-95 opacity-0 transition-all duration-300 overflow-hidden"
+            id="modal-content">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-white/5 flex justify-between items-center bg-white/5">
+                <h3 class="text-xl font-bold text-white">Apply for Access</h3>
+                <button id="close-modal" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 md:p-8 max-h-[80vh] overflow-y-auto custom-scrollbar">
+                <form id="application-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div class="space-y-2">
+                            <label for="full-name" class="text-sm font-medium text-gray-400">Full Name</label>
+                            <input type="text" id="full-name" required
+                                class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all"
+                                placeholder="John Doe">
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="space-y-2">
+                            <label for="email" class="text-sm font-medium text-gray-400">Email Address</label>
+                            <input type="email" id="email" required
+                                class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all"
+                                placeholder="john@example.com">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Whatsapp Number -->
+                        <div class="space-y-2">
+                            <label for="whatsapp" class="text-sm font-medium text-gray-400">WhatsApp Number</label>
+                            <input type="tel" id="whatsapp" required
+                                class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all"
+                                placeholder="+1 234 567 8900">
+                        </div>
+
+                        <!-- Business Type -->
+                        <div class="space-y-2">
+                            <label for="business-type" class="text-sm font-medium text-gray-400">Business Type</label>
+                            <select id="business-type" required
+                                class="w-full px-4 py-3 rounded-lg glass-field text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all appearance-none cursor-pointer">
+                                <option value="" disabled selected class="bg-darker text-gray-400">Select an option
+                                </option>
+                                <option value="e-commerce" class="bg-darker text-gray-300">E-Commerce</option>
+                                <option value="agency" class="bg-darker text-gray-300">Agency / Service</option>
+                                <option value="saas" class="bg-darker text-gray-300">SaaS</option>
+                                <option value="personal-brand" class="bg-darker text-gray-300">Personal Brand</option>
+                                <option value="other" class="bg-darker text-gray-300">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Current Website -->
+                    <div class="space-y-2">
+                        <label for="website" class="text-sm font-medium text-gray-400">Current Website <span
+                                class="text-xs text-gray-500">(Optional)</span></label>
+                        <input type="url" id="website"
+                            class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all"
+                            placeholder="https://">
+                    </div>
+
+                    <!-- Description -->
+                    <div class="space-y-2">
+                        <label for="description" class="text-sm font-medium text-gray-400">What are you looking
+                            for?</label>
+                        <textarea id="description" required rows="4"
+                            class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all resize-none"
+                            placeholder="Tell us about what you are looking to build..."></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit"
+                        class="w-full btn-glow py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg hover:shadow-lg hover:shadow-primary/25 transition-all transform active:scale-95">
+                        Submit Application
+                    </button>
+
+                    <p class="text-center text-xs text-gray-500">
+                        <i class="fas fa-lock text-green-400 mr-1"></i> Your data is 100% secure. We reply within 2
+                        hours.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
