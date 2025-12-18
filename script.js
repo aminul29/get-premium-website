@@ -407,67 +407,91 @@ $(document).ready(function () {
 
 
 
-// ---------------------------------------------
-// MODAL LOGIC
-// ---------------------------------------------
-const modal = $('#application-modal');
+    // ---------------------------------------------
+    // MODAL LOGIC
+    // ---------------------------------------------
+    const modal = $('#application-modal');
 
-const openModal = () => {
-    modal.removeClass('hidden').addClass('flex');
-    // Animate In
-    gsap.fromTo("#modal-backdrop",
-        { opacity: 0 },
-        { opacity: 1, duration: 0.3 }
-    );
-    gsap.fromTo("#modal-content",
-        { opacity: 0, scale: 0.95 },
-        { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }
-    );
-    $('body').addClass('overflow-hidden');
-};
+    const openModal = () => {
+        modal.removeClass('hidden').addClass('flex');
+        // Animate In
+        gsap.fromTo("#modal-backdrop",
+            { opacity: 0 },
+            { opacity: 1, duration: 0.3 }
+        );
+        gsap.fromTo("#modal-content",
+            { opacity: 0, scale: 0.95 },
+            { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }
+        );
+        $('body').addClass('overflow-hidden');
+    };
 
-const closeModal = () => {
-    // Animate Out
-    gsap.to("#modal-backdrop", { opacity: 0, duration: 0.2 });
-    gsap.to("#modal-content", {
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.2,
-        ease: "power2.in",
-        onComplete: () => {
-            modal.removeClass('flex').addClass('hidden');
-            $('body').removeClass('overflow-hidden');
-        }
+    const closeModal = () => {
+        // Animate Out
+        gsap.to("#modal-backdrop", { opacity: 0, duration: 0.2 });
+        gsap.to("#modal-content", {
+            opacity: 0,
+            scale: 0.95,
+            duration: 0.2,
+            ease: "power2.in",
+            onComplete: () => {
+                modal.removeClass('flex').addClass('hidden');
+                $('body').removeClass('overflow-hidden');
+            }
+        });
+    };
+
+    // Open Modal Triggers (Any link to #contact or explicit buttons)
+    $('a[href="#contact"]').on('click', function (e) {
+        e.preventDefault();
+        openModal();
     });
-};
 
-// Open Modal Triggers (Any link to #contact or explicit buttons)
-$('a[href="#contact"]').on('click', function (e) {
-    e.preventDefault();
-    openModal();
-});
+    // Close Modal Triggers
+    $('#close-modal, #modal-backdrop').on('click', closeModal);
 
-// Close Modal Triggers
-$('#close-modal, #modal-backdrop').on('click', closeModal);
+    // Form Submission
+    // Form Submission (WhatsApp Redirect)
+    $('#application-form').on('submit', function (e) {
+        e.preventDefault();
 
-// Form Submission
-$('#application-form').on('submit', function (e) {
-    e.preventDefault();
+        const btn = $(this).find('button[type="submit"]');
+        const originalText = btn.text();
 
-    // Simulate sending
-    const btn = $(this).find('button[type="submit"]');
-    const originalText = btn.text();
+        // Gather Data
+        const fullName = $('#full-name').val();
+        const email = $('#email').val();
+        const whatsapp = $('#whatsapp').val();
+        const businessType = $('#business-type').val();
+        const website = $('#website').val() || "N/A";
+        const description = $('#description').val();
 
-    btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin mr-2"></i> Sending...');
+        // Construct Message
+        const message = `*New Project Inquiry from WebWizBD* 🚀\n\n` +
+            `👤 *Name:* ${fullName}\n` +
+            `📧 *Email:* ${email}\n` +
+            `📱 *WhatsApp:* ${whatsapp}\n` +
+            `🏢 *Business Type:* ${businessType}\n` +
+            `🌐 *Website:* ${website}\n\n` +
+            `📝 *Project Details:* \n${description}`;
 
-    setTimeout(() => {
-        btn.text('Application Sent!').addClass('bg-green-500');
+        // Encode for URL
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappNumber = "+8801764355195";
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // UI Feedback
+        btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin mr-2"></i> Redirecting to WhatsApp...');
+
         setTimeout(() => {
+            // Redirect
+            window.open(whatsappURL, '_blank');
+
+            // Reset UI
             closeModal();
-            btn.prop('disabled', false).text(originalText).removeClass('bg-green-500');
+            btn.prop('disabled', false).text(originalText);
             $('#application-form')[0].reset();
-        }, 1000);
-    }, 1500);
-});
+        }, 1500);
+    });
 
 });
