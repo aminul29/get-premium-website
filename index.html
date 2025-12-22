@@ -51,6 +51,26 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '722791670863024');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=722791670863024&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 
 <body class="bg-darker text-white overflow-x-hidden antialiased selection:bg-accent selection:text-white">
@@ -160,7 +180,7 @@
                         class="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
                         1
                     </div>
-                    <h3 class="text-xl font-bold mb-4">We Research</h3>
+                    <h3 class="text-xl font-bold mb-4">Strategic Analysis</h3>
                     <p class="text-gray-400 leading-relaxed">We deep dive into your market to find exactly what works.
                         No guesswork.</p>
                 </div>
@@ -172,7 +192,7 @@
                         class="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-secondary/30 group-hover:scale-110 transition-transform">
                         2
                     </div>
-                    <h3 class="text-xl font-bold mb-4">We Design The UI</h3>
+                    <h3 class="text-xl font-bold mb-4">Bespoke Design</h3>
                     <p class="text-gray-400 leading-relaxed">Premium, high-converting visuals that separate you from the
                         competition.</p>
                 </div>
@@ -184,7 +204,7 @@
                         class="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-accent/30 group-hover:scale-110 transition-transform">
                         3
                     </div>
-                    <h3 class="text-xl font-bold mb-4">We Develop</h3>
+                    <h3 class="text-xl font-bold mb-4">Precision Development</h3>
                     <p class="text-gray-400 leading-relaxed">Clean, handcrafted code. Fast, secure, and built to scale
                         without bloat.</p>
                 </div>
@@ -196,7 +216,7 @@
                         class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
                         4
                     </div>
-                    <h3 class="text-xl font-bold mb-4">We Maintain & Secure</h3>
+                    <h3 class="text-xl font-bold mb-4">Security & Scale</h3>
                     <p class="text-gray-400 leading-relaxed">Daily backups, ongoing optimization, and enterprise-grade
                         security.</p>
                 </div>
